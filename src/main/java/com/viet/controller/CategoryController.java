@@ -24,6 +24,6 @@ public class CategoryController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public ResponseEntity<List<Category>> findAll() {
         List<Category> categoryList = categoryRepository.findAll();
-        return new ResponseEntity<>(categoryList, HttpStatus.OK);
+        return new ResponseEntity<>(categoryList, HttpStatus.OK); 
     }
 }
