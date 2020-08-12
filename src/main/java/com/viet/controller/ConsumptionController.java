@@ -75,6 +75,8 @@ public class ConsumptionController {
 
         consumptionReponsitory.save(curentConsumption.get());
         return new ResponseEntity<>(curentConsumption.get(), HttpStatus.OK);
+        
+        //hay
     }
 
     @RequestMapping(value = "/date-create/{date}", method = RequestMethod.GET)
