@@ -25,7 +25,7 @@ public class CategoryController {
     public ResponseEntity<List<Category>> findAll() {
         List<Category> categoryList = categoryRepository.findAll();
         return new ResponseEntity<>(categoryList, HttpStatus.OK);
-        
         // hi hi
+        // comment
     }
 }
