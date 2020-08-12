@@ -72,6 +72,8 @@ public class ConsumptionController {
         Category category = categoryRepository.findById(consumption.getCategory().getId()).get();
 
         curentConsumption.get().setCategory(category);
+        
+        // hihhi
 
         consumptionReponsitory.save(curentConsumption.get());
         return new ResponseEntity<>(curentConsumption.get(), HttpStatus.OK);
