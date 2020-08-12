@@ -73,12 +73,8 @@ public class ConsumptionController {
 
         curentConsumption.get().setCategory(category);
         
-        // hihhi
-
         consumptionReponsitory.save(curentConsumption.get());
         return new ResponseEntity<>(curentConsumption.get(), HttpStatus.OK);
-        
-        //hay
     }
 
     @RequestMapping(value = "/date-create/{date}", method = RequestMethod.GET)
