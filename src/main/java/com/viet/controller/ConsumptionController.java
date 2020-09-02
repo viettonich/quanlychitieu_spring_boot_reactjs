@@ -61,20 +61,20 @@ public class ConsumptionController {
     public ResponseEntity<Consumption> update(@PathVariable(value = "id") int id,
             @RequestBody Consumption consumption) {
 
-        Optional<Consumption> curentConsumption = consumptionReponsitory.findById(id);
-        if (!curentConsumption.isPresent()) {
+        Optional<Consumption> currentConsumption = consumptionReponsitory.findById(id);
+        if (!currentConsumption.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        curentConsumption.get().setAmount(consumption.getAmount());
-        curentConsumption.get().setName(consumption.getName());
-        curentConsumption.get().setDateCreate(consumption.getDateCreate());
+        currentConsumption.get().setAmount(consumption.getAmount());
+        currentConsumption.get().setName(consumption.getName());
+        currentConsumption.get().setDateCreate(consumption.getDateCreate());
 
         Category category = categoryRepository.findById(consumption.getCategory().getId()).get();
 
-        curentConsumption.get().setCategory(category);
+        currentConsumption.get().setCategory(category);
         
-        consumptionReponsitory.save(curentConsumption.get());
-        return new ResponseEntity<>(curentConsumption.get(), HttpStatus.OK);
+        consumptionReponsitory.save(currentConsumption.get());
+        return new ResponseEntity<>(currentConsumption.get(), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/date-create/{date}", method = RequestMethod.GET)

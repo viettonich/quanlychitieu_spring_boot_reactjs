@@ -15,7 +15,7 @@ import com.viet.model.Category;
 import com.viet.repository.CategoryRepository;
 
 @RestController
-@RequestMapping(value = "/api/categories", produces = { MediaType.APPLICATION_JSON_VALUE })
+@RequestMapping(value = "/api/categories", produces = {MediaType.APPLICATION_JSON_VALUE})
 @CrossOrigin(origins = "http://localhost:3000")
 public class CategoryController {
     @Autowired
@@ -25,9 +25,5 @@ public class CategoryController {
     public ResponseEntity<List<Category>> findAll() {
         List<Category> categoryList = categoryRepository.findAll();
         return new ResponseEntity<>(categoryList, HttpStatus.OK);
-        // hi hi
-        // comment
-        
-        // hay qa
     }
 }
